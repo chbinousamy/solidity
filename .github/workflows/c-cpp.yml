@@ -16,6 +16,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Install boost and z3
       run: |
+        sudo apt update
         apt-cache policy z3
         sudo apt install -y libboost-all-dev z3=4.12.1
     - name: Build Solidity
