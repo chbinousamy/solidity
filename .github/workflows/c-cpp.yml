@@ -23,7 +23,7 @@ jobs:
       run: |
         wget https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.12.1.tar.gz
         tar -xzf z3-4.12.1.tar.gz
-        ls
+        ls -l
         cd z3-4.12.1
         python scripts/mk_make.py
         cd build
