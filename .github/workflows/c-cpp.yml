@@ -14,13 +14,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Install boost and z3
+    - name: Install boost
       run: |
         sudo apt update
         sudo apt upgrade
         sudo apt install -y libboost-all-dev
+    - name: Install z3
+      run: |
         wget https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.12.1.tar.gz
         tar -xzf z3-4.12.1.tar.gz
+        ls
         cd z3-4.12.1
         python scripts/mk_make.py
         cd build
