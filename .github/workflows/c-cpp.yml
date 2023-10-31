@@ -18,7 +18,13 @@ jobs:
       run: |
         sudo apt update
         sudo apt upgrade
-        apt-cache policy z3
-        sudo apt install -y libboost-all-dev z3=4.12.1
+        sudo apt install -y libboost-all-dev
+        wget https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.12.1.tar.gz
+        tar -xzf z3-4.12.1.tar.gz
+        cd z3-4.12.1
+        python scripts/mk_make.py
+        cd build
+        make
+        sudo make install
     - name: Build Solidity
       run: ./scripts/build.sh
