@@ -14,6 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: |
-        sudo apt install libboost-all-dev
-        ./scripts/build.sh
+    - name: Install boost and z3
+      run: sudo apt install -y libboost-all-dev z3
+    - name: Build Solidity
+      run: ./scripts/build.sh
