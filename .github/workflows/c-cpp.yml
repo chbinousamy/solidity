@@ -17,6 +17,7 @@ jobs:
     - name: Install boost and z3
       run: |
         sudo apt update
+        sudo apt upgrade
         apt-cache policy z3
         sudo apt install -y libboost-all-dev z3=4.12.1
     - name: Build Solidity
